@@ -10,9 +10,6 @@
     "start": "node server.js",
     "server": "node --watch server.js"
   },
-  "engines": {
-    "node": ">=20"
-  },
   "keywords": [],
   "license": "ISC",
   "dependencies": {
@@ -25,8 +22,8 @@
     "react-dom": "^19.2.4"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^6.0.1",
+    "@vitejs/plugin-react": "^4.7.0",
     "sass": "^1.98.0",
-    "vite": "^8.0.3"
+    "vite": "^6.4.1"
   }
 }
