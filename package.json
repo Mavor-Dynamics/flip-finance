@@ -10,6 +10,9 @@
     "start": "node server.js",
     "server": "node --watch server.js"
   },
+  "engines": {
+    "node": ">=20"
+  },
   "keywords": [],
   "license": "ISC",
   "dependencies": {
