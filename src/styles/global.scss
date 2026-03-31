@@ -1,0 +1,54 @@
+@use 'variables' as *;
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: $font-family;
+  background: $black;
+  color: $white;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: $white;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: $font-family;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background: $white;
+  color: $black;
+  border: 2px solid $white;
+  border-radius: $radius;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: all 0.2s ease;
+  text-align: center;
+
+  &:hover {
+    background: transparent;
+    color: $white;
+  }
+
+  &--outline {
+    background: transparent;
+    color: $white;
+
+    &:hover {
+      background: $white;
+      color: $black;
+    }
+  }
+}
