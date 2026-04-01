@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import ContactModal from './components/ContactModal';
-import FinancingForm from './components/FinancingForm';
+import PreQualifyModal from './components/ContactModal';
+import SubmitPropertyModal from './components/FinancingForm';
 import './App.scss';
 
 function App() {
-  const [showContact, setShowContact] = useState(false);
-  const [showFinancing, setShowFinancing] = useState(false);
+  const [showPreQualify, setShowPreQualify] = useState(false);
+  const [showSubmitProperty, setShowSubmitProperty] = useState(false);
   const mainSiteUrl = import.meta.env.VITE_MAIN_SITE_URL || 'https://wealth-by-real-estate-production.up.railway.app/#platforms';
 
   return (
@@ -23,11 +23,11 @@ function App() {
           <h1 className="hero__title">Flip Finance</h1>
           <p className="hero__tagline">Private Capital for Real Estate Investors</p>
           <div className="hero__actions">
-            <button className="btn" onClick={() => setShowFinancing(true)}>
-              Apply for Financing
+            <button className="btn" onClick={() => setShowPreQualify(true)}>
+              Pre Qualify
             </button>
-            <button className="btn btn--outline" onClick={() => setShowContact(true)}>
-              Get in Touch
+            <button className="btn btn--outline" onClick={() => setShowSubmitProperty(true)}>
+              Submit a Property
             </button>
           </div>
         </div>
@@ -56,8 +56,8 @@ function App() {
             <span>More speed.</span>
             <span>Capital built for flippers.</span>
           </div>
-          <button className="btn" onClick={() => setShowFinancing(true)}>
-            Apply Now
+          <button className="btn" onClick={() => setShowPreQualify(true)}>
+            Apply
           </button>
         </div>
       </section>
@@ -82,8 +82,8 @@ function App() {
             <span>More speed.</span>
             <span>Capital built for flippers.</span>
           </div>
-          <button className="btn" onClick={() => setShowContact(true)}>
-            Get in Touch
+          <button className="btn" onClick={() => setShowSubmitProperty(true)}>
+            Fund a Project
           </button>
         </div>
         <div className="section__image">
@@ -94,15 +94,15 @@ function App() {
       <footer className="footer">
         <img src="/images/logo.webp" alt="Flip Finance" className="footer__logo" />
         <div className="footer__actions">
-          <button className="btn" onClick={() => setShowFinancing(true)}>Apply for Financing</button>
-          <button className="btn btn--outline" onClick={() => setShowContact(true)}>Contact Us</button>
+          <button className="btn" onClick={() => setShowPreQualify(true)}>Pre Qualify</button>
+          <button className="btn btn--outline" onClick={() => setShowSubmitProperty(true)}>Submit a Property</button>
           <a href={mainSiteUrl} className="btn btn--outline">Visit Our Website</a>
         </div>
         <p className="footer__copy">&copy; {new Date().getFullYear()} Flip Finance. All rights reserved.</p>
       </footer>
 
-      {showContact && <ContactModal onClose={() => setShowContact(false)} />}
-      {showFinancing && <FinancingForm onClose={() => setShowFinancing(false)} />}
+      {showPreQualify && <PreQualifyModal onClose={() => setShowPreQualify(false)} />}
+      {showSubmitProperty && <SubmitPropertyModal onClose={() => setShowSubmitProperty(false)} />}
     </div>
   );
 }
