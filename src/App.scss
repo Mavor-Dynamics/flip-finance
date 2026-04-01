@@ -25,21 +25,19 @@
     z-index: 1;
     display: flex;
     white-space: nowrap;
-    animation: ticker 20s linear infinite;
+    animation: ticker 80s linear infinite;
     pointer-events: none;
 
     span {
-      font-size: clamp(8rem, 22vw, 22rem);
+      font-family: $font-heading;
+      font-size: clamp(10rem, 28vw, 28rem);
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: -0.04em;
       line-height: 1;
       padding-right: 0.3em;
-      background: linear-gradient(180deg, $gold-light 0%, $gold 40%, $gold-dark 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      opacity: 0.3;
+      color: $gold;
+      opacity: 0.55;
     }
   }
 
@@ -54,12 +52,13 @@
   }
 
   &__logo {
-    height: 140px;
+    height: 280px;
     width: auto;
     margin-bottom: 20px;
   }
 
   &__tagline {
+    font-family: $font-heading;
     font-size: 0.95rem;
     color: $light-gray;
     letter-spacing: 0.15em;
@@ -67,6 +66,36 @@
     font-weight: 500;
     max-width: 500px;
     padding: 0 20px;
+    margin-bottom: 20px;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__link {
+    background: none;
+    border: none;
+    color: $white;
+    font-family: $font-heading;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.2s;
+    padding: 0;
+
+    &:hover {
+      color: $gold;
+    }
+  }
+
+  &__link-divider {
+    color: $gray;
+    font-weight: 300;
   }
 
   &__mountain {
@@ -89,6 +118,52 @@
   }
 }
 
+// Sleek button
+.btn-sleek {
+  display: inline-block;
+  padding: 14px 40px;
+  background: transparent;
+  color: $white;
+  border: 1px solid rgba($white, 0.3);
+  border-radius: 100px;
+  font-family: $font-heading;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, $gold, $gold-light);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: inherit;
+  }
+
+  &:hover {
+    border-color: $gold;
+    color: $black;
+
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  // Keep text above the pseudo-element
+  span, & {
+    position: relative;
+    z-index: 1;
+  }
+}
+
 // CTA section
 .cta-section {
   display: grid;
@@ -101,19 +176,17 @@
 
 .cta-card {
   text-align: center;
-  padding: 40px;
+  padding: 48px 40px;
   border: 1px solid $dark-border;
   border-radius: $radius-lg;
   background: $dark-card;
 
   &__title {
-    font-size: 2rem;
+    font-family: $font-heading;
+    font-size: 2.2rem;
     font-weight: 800;
     margin-bottom: 16px;
-    background: linear-gradient(135deg, $gold-light, $gold, $gold-dark);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: $gold;
   }
 
   &__desc {
@@ -126,7 +199,7 @@
     margin-right: auto;
   }
 
-  .btn {
+  .btn-sleek {
     margin-top: 12px;
   }
 }
@@ -153,16 +226,20 @@
   }
 
   &__content {
+    font-family: $font-heading;
+
     p {
       color: $light-gray;
-      font-size: 1.05rem;
-      line-height: 1.7;
+      font-size: 1.1rem;
+      line-height: 1.75;
       margin-bottom: 16px;
+      font-weight: 400;
     }
   }
 
   &__title {
-    font-size: 2.8rem;
+    font-family: $font-heading;
+    font-size: 3rem;
     font-weight: 800;
     letter-spacing: -0.02em;
     margin-bottom: 24px;
@@ -175,7 +252,8 @@
     margin-top: 24px;
 
     span {
-      font-size: 1.2rem;
+      font-family: $font-heading;
+      font-size: 1.3rem;
       font-weight: 700;
       letter-spacing: -0.01em;
     }
@@ -183,10 +261,9 @@
 }
 
 .gold {
-  background: linear-gradient(135deg, $gold-light, $gold, $gold-dark);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: $gold;
+  // Reset any inherited background-clip text
+  -webkit-text-fill-color: $gold;
 }
 
 // Footer
@@ -199,7 +276,7 @@
   gap: 24px;
 
   &__logo {
-    height: 120px;
+    height: 240px;
     width: auto;
   }
 
@@ -221,7 +298,7 @@
 @media (max-width: 768px) {
   .hero {
     &__logo {
-      height: 90px;
+      height: 160px;
     }
 
     &__tagline {
@@ -229,7 +306,7 @@
     }
 
     &__ticker span {
-      font-size: clamp(5rem, 18vw, 10rem);
+      font-size: clamp(6rem, 20vw, 12rem);
     }
   }
 
@@ -266,14 +343,14 @@
     padding: 40px 20px;
 
     &__logo {
-      height: 80px;
+      height: 140px;
     }
 
     &__actions {
       flex-direction: column;
       width: 100%;
 
-      .btn {
+      .btn-sleek {
         width: 100%;
       }
     }
