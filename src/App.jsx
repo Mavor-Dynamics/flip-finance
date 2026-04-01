@@ -11,6 +11,11 @@ function App() {
   return (
     <div className="app">
       <section className="hero">
+        <div className="hero__top">
+          <img src="/images/logo.webp" alt="Flip Finance" className="hero__logo" />
+          <p className="hero__tagline">Private Capital Built for Seasoned Fix &amp; Flip Investors</p>
+        </div>
+
         <div className="hero__ticker-wrap">
           <div className="hero__ticker" aria-hidden="true">
             <span>Flip Finance</span>
@@ -20,11 +25,6 @@ function App() {
             <span>Flip Finance</span>
             <span>Flip Finance</span>
           </div>
-        </div>
-
-        <div className="hero__top">
-          <img src="/images/logo.webp" alt="Flip Finance" className="hero__logo" />
-          <p className="hero__tagline">Private Capital Built for Seasoned Fix &amp; Flip Investors</p>
         </div>
 
         <img src="/images/mountain-banner.webp" alt="" className="hero__mountain" />
