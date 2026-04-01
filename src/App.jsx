@@ -6,7 +6,6 @@ import './App.scss';
 function App() {
   const [showPreQualify, setShowPreQualify] = useState(false);
   const [showSubmitProperty, setShowSubmitProperty] = useState(false);
-  const mainSiteUrl = import.meta.env.VITE_MAIN_SITE_URL || 'https://wealth-by-real-estate-production.up.railway.app/#platforms';
 
   return (
     <div className="app">
@@ -111,7 +110,6 @@ function App() {
         <div className="footer__actions">
           <button className="btn-sleek" onClick={() => setShowPreQualify(true)}>Pre Qualify</button>
           <button className="btn-sleek" onClick={() => setShowSubmitProperty(true)}>Submit a Property</button>
-          <a href={mainSiteUrl} className="btn-sleek">Visit Our Website</a>
         </div>
         <p className="footer__copy">&copy; {new Date().getFullYear()} Flip Finance. All rights reserved.</p>
       </footer>
