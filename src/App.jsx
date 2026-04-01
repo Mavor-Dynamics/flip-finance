@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import PreQualifyModal from './components/ContactModal';
 import SubmitPropertyModal from './components/FinancingForm';
 import './App.scss';
@@ -6,22 +6,27 @@ import './App.scss';
 function App() {
   const [showPreQualify, setShowPreQualify] = useState(false);
   const [showSubmitProperty, setShowSubmitProperty] = useState(false);
+  const heroRef = useRef(null);
+  const textRef = useRef(null);
   const mainSiteUrl = import.meta.env.VITE_MAIN_SITE_URL || 'https://wealth-by-real-estate-production.up.railway.app/#platforms';
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (textRef.current) {
+        const scrollY = window.scrollY;
+        textRef.current.style.transform = `translateY(${scrollY * 0.4}px)`;
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <div className="app">
-      <header className="header">
-        <img src="/images/logo.webp" alt="Flip Finance" className="header__logo" />
-        <nav className="header__nav">
-          <a href={mainSiteUrl} className="header__link">Back to Main Site</a>
-        </nav>
-      </header>
-
-      <section className="hero">
-        <img src="/images/mountain-banner.webp" alt="" className="hero__bg" />
-        <div className="hero__content">
-          <h1 className="hero__title">Flip Finance</h1>
-          <p className="hero__tagline">Private Capital for Real Estate Investors</p>
+      <section className="hero" ref={heroRef}>
+        <div className="hero__top">
+          <img src="/images/logo.webp" alt="Flip Finance" className="hero__logo" />
+          <p className="hero__tagline">Private Capital Built for Seasoned Fix &amp; Flip Investors</p>
           <div className="hero__actions">
             <button className="btn" onClick={() => setShowPreQualify(true)}>
               Pre Qualify
@@ -31,6 +36,13 @@ function App() {
             </button>
           </div>
         </div>
+
+        <h1 className="hero__title" ref={textRef}>
+          <span>Flip</span>
+          <span>Finance</span>
+        </h1>
+
+        <img src="/images/mountain-banner.webp" alt="" className="hero__mountain" />
       </section>
 
       <section className="section section--money">

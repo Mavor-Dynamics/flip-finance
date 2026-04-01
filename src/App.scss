@@ -6,82 +6,42 @@
   flex-direction: column;
 }
 
-// Header
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 32px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-
-  &__logo {
-    height: 50px;
-    width: auto;
-  }
-
-  &__link {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: $gray;
-    transition: color 0.2s;
-
-    &:hover {
-      color: $white;
-    }
-  }
-}
-
-// Hero with mountain banner
+// Hero
 .hero {
   position: relative;
-  min-height: 70vh;
+  height: 100vh;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   overflow: hidden;
   background: $black;
 
-  &__bg {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    object-position: bottom;
-    opacity: 0.6;
-  }
-
-  &__content {
+  &__top {
     position: relative;
-    z-index: 2;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
     text-align: center;
-    padding: 0 24px 80px;
   }
 
-  &__title {
-    font-size: clamp(3rem, 8vw, 5.5rem);
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1;
-    margin-bottom: 12px;
-    background: linear-gradient(135deg, $gold-light, $gold, $gold-dark);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  &__logo {
+    height: 80px;
+    width: auto;
+    margin-bottom: 20px;
   }
 
   &__tagline {
-    font-size: 1.2rem;
+    font-size: 0.95rem;
     color: $light-gray;
-    margin-bottom: 32px;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     font-weight: 500;
+    margin-bottom: 28px;
+    max-width: 500px;
+    padding: 0 20px;
   }
 
   &__actions {
@@ -89,6 +49,44 @@
     gap: 16px;
     justify-content: center;
     flex-wrap: wrap;
+  }
+
+  &__title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 0.85;
+    font-size: clamp(8rem, 20vw, 20rem);
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    background: linear-gradient(180deg, $gold-light 0%, $gold 40%, $gold-dark 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    opacity: 0.35;
+    white-space: nowrap;
+    pointer-events: none;
+    will-change: transform;
+
+    span {
+      display: block;
+    }
+  }
+
+  &__mountain {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: auto;
+    display: block;
+    flex-shrink: 0;
+    margin-top: auto;
   }
 }
 
@@ -108,9 +106,7 @@
   &__image {
     img {
       width: 100%;
-      height: 100%;
-      max-height: 550px;
-      object-fit: cover;
+      height: auto;
       border-radius: $radius-lg;
     }
   }
@@ -182,23 +178,17 @@
 
 // Responsive
 @media (max-width: 768px) {
-  .header {
-    padding: 12px 20px;
-
-    &__logo {
-      height: 36px;
-    }
-  }
-
   .hero {
-    min-height: 60vh;
-
-    &__content {
-      padding: 0 20px 50px;
+    &__logo {
+      height: 56px;
     }
 
     &__tagline {
-      font-size: 1rem;
+      font-size: 0.8rem;
+    }
+
+    &__title {
+      font-size: clamp(5rem, 18vw, 10rem);
     }
   }
 
