@@ -23,7 +23,8 @@
     align-items: center;
     width: 100%;
     min-height: 0;
-    overflow: hidden;
+    overflow-x: clip;
+    overflow-y: visible;
     z-index: 1;
     mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
     -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
