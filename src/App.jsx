@@ -66,22 +66,24 @@ function App() {
         <div className="section__content">
           <h2 className="section__title">The <span className="gold">Investor</span></h2>
           <p>
-            You've done this before. You know the difference between a good deal and a great one — and you know that <span className="gold">speed wins</span>.
+            Whether you’re closing your <span className="gold">first deal</span> or running <span className="gold">multiple flips</span> at once, capital is what moves everything.
           </p>
           <p>
-            Whether you're scaling your portfolio, locking in your next flip, or jumping on an <span className="gold">off-market opportunity</span>, you need a financing partner that doesn't slow you down.
+            <span className="gold">New investors</span> get in the game faster.<br />
+            <span className="gold">Growing investors</span> scale without friction.<br />
+            <span className="gold">Experienced flippers</span> move on opportunities instantly.
           </p>
           <p>
-            Flip Finance was built by investors, for investors. We understand the urgency of a deal because <span className="gold">we've been in your shoes</span>. No waiting on committees. No explaining your strategy to someone who's never bought a property.
+            Same advantage at every level:
           </p>
           <p>
-            Just <span className="gold">fast, flexible capital</span> from people who speak your language.
+            <span className="gold">Speed.</span><br />
+            <span className="gold">Access.</span><br />
+            <span className="gold">Execution.</span>
           </p>
-          <div className="section__taglines">
-            <span>You find the deal.</span>
-            <span>We fund it.</span>
-            <span className="gold">It's that simple.</span>
-          </div>
+          <p>
+            No delays. No missed deals. Just <span className="gold">capital when it matters</span>.
+          </p>
         </div>
         <div className="section__image">
           <img src="/images/investor.webp" alt="The Investor" />
