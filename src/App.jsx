@@ -31,7 +31,7 @@ function App() {
         <div className="cta-card cta-card--single">
           <h2 className="cta-card__title">Get Approved Now</h2>
           <p className="cta-card__desc">
-            Regardless if you have a property in mind yet, getting approved now is the best way to be able to close quickly.
+            Even if you haven't identified a specific property yet, obtaining approval now is the best way to ensure you can move quickly when the right opportunity arises.
           </p>
           <div className="cta-card__actions">
             <button className="btn-sleek" onClick={() => setShowApply(true)}>
@@ -131,18 +131,13 @@ function App() {
         <div className="reviews__grid">
           <div className="review-card">
             <div className="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p className="review-card__text">"Fastest funding I've ever experienced. I had approval within hours and closed in under a week. These guys actually understand the flip game."</p>
-            <span className="review-card__author">— Jordan M., Denver CO</span>
+            <p className="review-card__text">"Flip Finance is a game-changer. Competitive rates, two-day funding, and renovation draws in 48 hours. Plus, real answers are always a phone call away. Best value I've found as an investor. I've used them for my last 3 projects!"</p>
+            <span className="review-card__author">— Huy Tran, Fix and Flip Investor</span>
           </div>
           <div className="review-card">
             <div className="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p className="review-card__text">"No committees, no runaround. Just straight answers and fast money. Flip Finance is the only lender I'll use going forward."</p>
-            <span className="review-card__author">— Marcus T., Aurora CO</span>
-          </div>
-          <div className="review-card">
-            <div className="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p className="review-card__text">"I've worked with hard money lenders who took weeks to close. Flip Finance had my back from day one. Real investors funding real investors."</p>
-            <span className="review-card__author">— Sarah K., Lakewood CO</span>
+            <p className="review-card__text">"The process with Flip Finance was smooth, simple and affordable. From start to finish, the folks I spoke to were professional and kind. It was the fastest draw process I've ever experienced, and my funds were delivered within days. I am looking forward to using them again soon!"</p>
+            <span className="review-card__author">— Ben Handler, Fix and Flip Investor</span>
           </div>
         </div>
       </section>
