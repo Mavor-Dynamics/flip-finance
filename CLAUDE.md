@@ -1,7 +1,13 @@
-# Flip Finance
+# Flip Finance — Business/Client Project (Hands-Off)
 
 ## Overview
 Financing website for a real estate company. Simple landing page with contact and financing application forms that submit to GoHighLevel via webhooks.
+
+## Project Status: Business/Client
+- **Owner**: Business GitHub Account
+- **Deployment**: Business Railway Account
+- **Standardization**: DO NOT include SSO, central auth, or the Bug Tracker `widget.js`. This is a clean client site.
+- **Workflow**: This project is currently "Hands-Off". Only perform critical bug fixes or requested updates.
 
 ## Architecture
 - **Frontend**: React 19 + Vite + SASS
